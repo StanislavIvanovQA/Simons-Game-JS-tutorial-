@@ -18,14 +18,14 @@ document.addEventListener("keydown", function (e) {
 });
 
 function clickHandler(color) {
-    $("#" + color).addClass("game-over");
-    setTimeout(function () {
-        $("#" + color).removeClass("game-over");
-    }, 200);
-    var audio = new Audio("sounds/" + color + ".mp3");
-    audio.play();
     if (gameState == "Game started") {
         correctClickValidator(color);
+        $("#" + color).addClass("game-over");
+        setTimeout(function () {
+            $("#" + color).removeClass("game-over");
+        }, 200);
+        var audio = new Audio("sounds/" + color + ".mp3");
+        audio.play();
     }
 }
 
